@@ -21,11 +21,11 @@ A web application to search and view the latest news using the NewsAPI. The appl
 
 ## Technologies Used
 
-React
-Material-UI
-Axios
-Vite
-ESLint
+- React
+- Material-UI
+- Axios
+- Vite
+- ESLint
 
 ## Installation
 
@@ -33,8 +33,8 @@ To run this application on your local machine, follow these steps:
 
 ### Prerequisites
 
-Node.js (recommended: version 18 or higher)
-npm (comes with Node.js)
+- Node.js
+- npm
 
 ### Basic Installation Steps
 
