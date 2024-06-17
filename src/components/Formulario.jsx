@@ -1,6 +1,7 @@
 import { FormControl, InputLabel, Select, MenuItem } from  '@mui/material'
 import useNoticias from '../hooks/useNoticias';
 
+// Define las categorías de noticias
 const CATEGORIAS = [
     { value: 'general', label: 'General' },
     { value: 'business', label: 'Business' },
@@ -21,6 +22,7 @@ const Formulario = () => {
                     size="small"
                     style={{ width: '200px' }}
                     sx={{mb: { xs: 1, sm: 1 },
+                        mt: { xs: 0, sm: 1 },
                         '& .MuiInputLabel-root': { color: 'white' },
                         '& .MuiOutlinedInput-root': {
                             '& fieldset': {
@@ -45,8 +47,8 @@ const Formulario = () => {
                     <Select
                     label='Category'
                     size="small"
-                    onChange={handleChangeCategoria}
-                    value={categoria}
+                    onChange={handleChangeCategoria}  // Maneja el cambio de categoría
+                    value={categoria} // Valor actual de la categoría
                     >
                     {
                         CATEGORIAS.map( categoria => (

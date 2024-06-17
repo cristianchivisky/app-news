@@ -10,6 +10,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Formulario from './Formulario'
 import { useState } from 'react';
 
+// Estilo para el contenedor de búsqueda
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -25,6 +26,7 @@ const Search = styled('div')(({ theme }) => ({
   },
 }));
 
+// Estilo para el icono de búsqueda
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: '100%',
@@ -35,6 +37,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   justifyContent: 'center',
 }));
 
+// Estilo para el input de búsqueda
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   width: '100%',
@@ -55,9 +58,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar({ onSearch }) {
     const [searchTerm, setSearchTerm] = useState('');
 
+    // Maneja el cambio en el input de búsqueda
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
-        onSearch(event.target.value);
+        onSearch(event.target.value); // Llama a la función onSearch con el término de búsqueda
     };
 
     return (
@@ -85,7 +89,7 @@ export default function SearchAppBar({ onSearch }) {
                         News Search
                     </Typography>
                             
-                    <Search sx={{mb: { xs: 2, sm: 0 }, mt: { xs: 0, sm: 1 }, mr: { xs: 0, sm: 2 }, ml: { xs: 0, sm: 2 }}}>
+                    <Search sx={{mb: { xs: 2, sm: 0 }, mt: { xs: 0, sm: 1, md: 0}, mr: { xs: 0, sm: 2 }, ml: { xs: 0, sm: 2 }}}>
                         <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
@@ -96,7 +100,7 @@ export default function SearchAppBar({ onSearch }) {
                             onChange={handleSearchChange}
                         />
                     </Search>
-                    <Formulario/>
+                    <Formulario/> {/* Componente Formulario para seleccionar categorías */}
                 </Toolbar>
             </AppBar>
         </Box>

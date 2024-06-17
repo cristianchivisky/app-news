@@ -9,22 +9,24 @@ import SearchAppBar from './Navbar';
 const ListadoNoticias = () => {
     const { noticias, totalNoticias, handleChangePagina, pagina } = useNoticias();
     const [filteredNoticias, setFilteredNoticias] = useState(noticias);
-    const totalPaginas = Math.ceil(totalNoticias / 21)
+    const totalPaginas = Math.ceil(totalNoticias / 21); // Calcula el número total de páginas
 
+    // Función para filtrar noticias según el término de búsqueda
     const handleSearch = (searchTerm) => {
         const filtered = noticias.filter(noticia => 
             noticia.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setFilteredNoticias(filtered);
     };
-    
+
+    // Actualiza las noticias filtradas
     React.useEffect(() => {
         setFilteredNoticias(noticias);
     }, [noticias]);
     
     return (  
         <>
-            <SearchAppBar onSearch={handleSearch} />
+            <SearchAppBar onSearch={handleSearch} /> {/* Barra de búsqueda */}
             <Container maxWidth="lg">
                 <Typography
                     textAlign={'center'}

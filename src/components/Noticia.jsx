@@ -10,6 +10,8 @@ import {
 
 const Noticias = ({ noticia }) => {
     const { urlToImage, url, title, description, source } = noticia;
+    
+    // Si no hay imagen, no renderiza el componente
     if (!urlToImage) {
         return null;
     }
